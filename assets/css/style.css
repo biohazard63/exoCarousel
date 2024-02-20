@@ -1,53 +1,98 @@
-body {
+.carousel {
+    width: 80%;
+    height: 80vh;
+    margin: auto;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: #f3f3f3;
 }
 
-.carousel {
-    position: relative;
+.carousel .slide {
     width: 100%;
-    max-width: 800px;
-    height: 400px;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carousel .slide.active {
+    display: flex;
 }
 
 .carousel .slide img {
-    height: 350px;
-    max-height: 400px;
-    width: auto;
+    width: 40%;
+    height: auto;
     object-fit: cover;
 }
 
-.carousel .arrow {
+.carousel .slide .text-content {
+    width: 60%;
+    padding: 20px;
+    color: #000;
+    overflow: auto;
+}
+
+.carousel .slide .text-content h2,
+.carousel .slide .text-content h3,
+.carousel .slide .text-content p {
+    margin: 0 0 10px 0;
+}
+
+.carousel .slide .text-content h2 {
+    font-size: 2em;
+}
+
+.carousel .slide .text-content h3 {
+    font-size: 1.5em;
+}
+
+.carousel .slide .text-content p {
+    font-size: 1em;
+}
+
+
+.carousel .prev-button,
+.carousel .next-button {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: #fff;
+    font-size: 2em;
+    background: none;
     border: none;
-    padding: 1rem;
     cursor: pointer;
 }
 
-.carousel .arrow.left {
-    left: -50px;
+.carousel .prev-button {
+    left: 10px;
 }
 
-.carousel .arrow.right {
-    right: -50px;
+.carousel .next-button {
+    right: 10px;
 }
 
-.slide-content {
+
+.carousel .pagination-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    align-items: center;
+    gap: 10px;
 }
 
-.text-content {
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.carousel .pagination-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ccc;
+    cursor: pointer;
+}
+
+.carousel .pagination-dot.active {
+    background: #000;
+}
+
+.slides-container{
+    background-color: #cccccc;
 }
